@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <center>
+      <StackPane BorderPane.alignment="BOTTOM_CENTER">
+         <children>
+            <MediaView fx:id="view" fitHeight="200.0" fitWidth="200.0" StackPane.alignment="CENTER">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin></MediaView>
+            <VBox fx:id="vBox" alignment="BOTTOM_CENTER" StackPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <Slider fx:id="timeSlider">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Slider>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Button fx:id="openFile" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="35.0" prefWidth="35.0">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="playButton" mnemonicParsing="false" onAction="#play" prefHeight="35.0" prefWidth="35.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#pause" prefHeight="35.0" prefWidth="35.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="stopButton" mnemonicParsing="false" onAction="#stop" prefHeight="35.0" prefWidth="35.0">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="slowestButton" mnemonicParsing="false" onAction="#slowest" text="slowest" />
+                        <Button fx:id="slowerButton" mnemonicParsing="false" onAction="#slower" text="slower" />
+                        <Button fx:id="fasterButton" mnemonicParsing="false" onAction="#faster" text="faster" />
+                        <Button fx:id="fastestButton" mnemonicParsing="false" onAction="#fastest" text="fastest" />
+                        <Button fx:id="closeButton" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#closeVideo" prefHeight="35.0" prefWidth="35.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Slider fx:id="volumeSlider" blockIncrement="1.0" majorTickUnit="50.0" prefHeight="33.0" prefWidth="129.0" showTickLabels="true" value="100.0" />
+                        <Button fx:id="resizeScreen" contentDisplay="CENTER" mnemonicParsing="false" onAction="#resize_screen" prefHeight="25.0" prefWidth="25.0">
+                           <HBox.margin>
+                              <Insets bottom="8.0" left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <effect>
+                        <Blend />
+                     </effect>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="25.0" />
+         </BorderPane.margin>
+      </StackPane>
+   </center>
+   <top>
+      <Button fx:id="snapshot" mnemonicParsing="false" onAction="#snapShot" opacity="0.5" text="snapshot" BorderPane.alignment="TOP_RIGHT" />
+   </top>
+</BorderPane>
